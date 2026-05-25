@@ -1,5 +1,11 @@
 # claude-writing-skills
 
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/xiaomoBoy/claude-writing-skills?style=social)](https://github.com/xiaomoBoy/claude-writing-skills)
+[![Last commit](https://img.shields.io/github/last-commit/xiaomoBoy/claude-writing-skills)](https://github.com/xiaomoBoy/claude-writing-skills/commits/main)
+[![Issues](https://img.shields.io/github/issues/xiaomoBoy/claude-writing-skills)](https://github.com/xiaomoBoy/claude-writing-skills/issues)
+[![Skills](https://img.shields.io/badge/skills-5-green)](skills/)
+
 > A toolkit of [Claude Code](https://www.anthropic.com/claude-code) skills for long-form content creators — research, score, rewrite, and publish, end to end.
 
 **中文版**: [README.zh-CN.md](README.zh-CN.md)
@@ -18,6 +24,10 @@ Add this repo as a Claude Code marketplace, then install:
 ```
 
 That's it — you now have all 5 skills available.
+
+Each skill may need its own upstream CLI (e.g. `yt-dlp`, `nlm`, `codex`, `wechatsync`). See **[INSTALL.md](INSTALL.md)** for the full per-OS install guide (macOS / Linux / Windows + verification + troubleshooting).
+
+> Not using Claude Code? See **[INTEGRATIONS.md](INTEGRATIONS.md)** for using these skills with Cursor, Aider, Codex CLI, the Claude API directly, or as standalone scripts.
 
 ## What's inside
 
@@ -84,9 +94,11 @@ Most skills work with zero config. A few env vars are useful:
 
 ## Requirements
 
-- Claude Code (with skill / plugin support)
-- For individual skills, see the per-skill `SKILL.md` for tool dependencies (`nlm`, `yt-dlp`, `codex`, `wechatsync`, etc.)
-- Python 3.9+ for the bundled scripts
+- Claude Code (with skill / plugin support) — or any other agent runtime per [INTEGRATIONS.md](INTEGRATIONS.md)
+- Per-skill CLI dependencies (`nlm`, `yt-dlp`, `codex`, `wechatsync`) — install only the ones for skills you use
+- Python 3.9+ for the bundled scripts (standard library only — no pip deps)
+
+For full install instructions across macOS / Linux / Windows, see **[INSTALL.md](INSTALL.md)**.
 
 ## Repository layout
 
@@ -94,6 +106,9 @@ Most skills work with zero config. A few env vars are useful:
 .claude-plugin/
   marketplace.json     # marketplace definition (one plugin)
   plugin.json          # plugin manifest
+.github/
+  ISSUE_TEMPLATE/      # bug + feature templates
+  PULL_REQUEST_TEMPLATE.md
 skills/
   research-collector/
   publisher-wechatsync/
@@ -103,24 +118,39 @@ skills/
 docs/
   USAGE.md             # end-to-end walkthrough (EN)
   USAGE.zh-CN.md       # end-to-end walkthrough (ZH)
-LICENSE
 README.md              # this file
 README.zh-CN.md        # Chinese landing
+INSTALL.md             # dependency install guide (EN)
+INSTALL.zh-CN.md       # dependency install guide (ZH)
+INTEGRATIONS.md        # use outside Claude Code (EN)
+INTEGRATIONS.zh-CN.md  # use outside Claude Code (ZH)
+CONTRIBUTING.md        # how to contribute
+CHANGELOG.md           # version history
+LICENSE
 ```
 
-## Detailed usage guide
+## Documentation index
 
-- English: [docs/USAGE.md](docs/USAGE.md)
-- 中文: [docs/USAGE.zh-CN.md](docs/USAGE.zh-CN.md)
-
-Walks through one complete end-to-end scenario (research → write → score → publish).
+| Doc | What's in it |
+|---|---|
+| [README.md](README.md) / [README.zh-CN.md](README.zh-CN.md) | Landing page, quick install, what's inside |
+| [INSTALL.md](INSTALL.md) / [INSTALL.zh-CN.md](INSTALL.zh-CN.md) | Detailed install of every CLI dependency, per OS |
+| [INTEGRATIONS.md](INTEGRATIONS.md) / [INTEGRATIONS.zh-CN.md](INTEGRATIONS.zh-CN.md) | Use these skills with Cursor, Aider, Codex CLI, Claude API SDK, or standalone |
+| [docs/USAGE.md](docs/USAGE.md) / [docs/USAGE.zh-CN.md](docs/USAGE.zh-CN.md) | End-to-end scenario walkthrough |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | Contribution workflow + design principles |
+| [CHANGELOG.md](CHANGELOG.md) | Version history |
+| Per-skill `skills/<name>/SKILL.md` | The actual playbook each skill follows |
+| Per-skill `skills/<name>/README.md` | GitHub-friendly skill summary |
 
 ## Contributing
 
-Issues and PRs welcome. Two areas where help would matter most:
+Issues and PRs welcome. See **[CONTRIBUTING.md](CONTRIBUTING.md)** for the workflow + design principles.
 
-- **English translation of SKILL.md bodies** — the descriptions trigger fine in English, but the body content (workflows, troubleshooting) is currently Chinese.
-- **More worked examples in per-skill READMEs** — especially for `score-optimizer` (the calibration loop is non-obvious if you haven't tried it).
+Highest-impact PRs right now:
+
+- **English translation of SKILL.md bodies** — the descriptions trigger fine in English, but the body content (workflows, troubleshooting) is currently Chinese
+- **Integration recipes** for other agent runtimes (LangChain, AutoGen, etc.) — add to [INTEGRATIONS.md](INTEGRATIONS.md)
+- **More worked examples in per-skill READMEs** — especially for `score-optimizer` (the calibration loop is non-obvious if you haven't tried it)
 
 If you build something on top of these or extract a new skill, link back — happy to feature it in the README.
 

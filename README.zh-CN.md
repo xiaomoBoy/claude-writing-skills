@@ -1,5 +1,11 @@
 # claude-writing-skills
 
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/xiaomoBoy/claude-writing-skills?style=social)](https://github.com/xiaomoBoy/claude-writing-skills)
+[![Last commit](https://img.shields.io/github/last-commit/xiaomoBoy/claude-writing-skills)](https://github.com/xiaomoBoy/claude-writing-skills/commits/main)
+[![Issues](https://img.shields.io/github/issues/xiaomoBoy/claude-writing-skills)](https://github.com/xiaomoBoy/claude-writing-skills/issues)
+[![Skills](https://img.shields.io/badge/skills-5-green)](skills/)
+
 > 一套面向长文写作的 [Claude Code](https://www.anthropic.com/claude-code) skill 工具箱 —— 调研、打分、改稿、发布，端到端。
 
 5 个从真实写作工作流里抽出来的 skill。边界很死,各管一段,可以组合用。每个只做一件事。
@@ -18,6 +24,10 @@
 ```
 
 完事。5 个 skill 都有了。
+
+每个 skill 还需要它自己的上游 CLI(如 `yt-dlp` / `nlm` / `codex` / `wechatsync`)。完整的跨 OS 安装指南(macOS / Linux / Windows + 验证 + troubleshooting)见 **[INSTALL.zh-CN.md](INSTALL.zh-CN.md)**。
+
+> 不用 Claude Code? 看 **[INTEGRATIONS.zh-CN.md](INTEGRATIONS.zh-CN.md)** —— 怎么在 Cursor / Aider / Codex CLI / 直调 Claude API / 纯脚本里用这些 skill。
 
 ## 包含哪些 skill
 
@@ -84,9 +94,11 @@ Claude: [触发 yt-dlp-direct] → 构造对的 yt-dlp 命令,执行
 
 ## 环境要求
 
-- Claude Code(支持 skill/plugin)
-- 各 skill 对应的 CLI 工具(详见各自的 `SKILL.md`)
-- Python 3.9+(脚本运行需要)
+- Claude Code(支持 skill/plugin)—— 或其他 agent runtime,见 [INTEGRATIONS.zh-CN.md](INTEGRATIONS.zh-CN.md)
+- 各 skill 对应的 CLI 依赖(`nlm` / `yt-dlp` / `codex` / `wechatsync`)—— 只装你打算用的
+- Python 3.9+(脚本运行需要,只用标准库,不装额外 pip 包)
+
+跨 macOS / Linux / Windows 的完整安装指南见 **[INSTALL.zh-CN.md](INSTALL.zh-CN.md)**。
 
 ## 仓库结构
 
@@ -94,6 +106,9 @@ Claude: [触发 yt-dlp-direct] → 构造对的 yt-dlp 命令,执行
 .claude-plugin/
   marketplace.json     # marketplace 定义(一个 plugin)
   plugin.json          # plugin manifest
+.github/
+  ISSUE_TEMPLATE/      # bug + feature 模板
+  PULL_REQUEST_TEMPLATE.md
 skills/
   research-collector/
   publisher-wechatsync/
@@ -103,23 +118,38 @@ skills/
 docs/
   USAGE.md             # 英文使用文档(端到端走一遍)
   USAGE.zh-CN.md       # 中文使用文档
-LICENSE
 README.md              # 英文 landing
 README.zh-CN.md        # 中文 landing
+INSTALL.md             # 依赖安装指南(英文)
+INSTALL.zh-CN.md       # 依赖安装指南(中文)
+INTEGRATIONS.md        # 在 Claude Code 之外用(英文)
+INTEGRATIONS.zh-CN.md  # 在 Claude Code 之外用(中文)
+CONTRIBUTING.md        # 贡献指引
+CHANGELOG.md           # 版本记录
+LICENSE
 ```
 
-## 详细使用文档
+## 文档总索引
 
-- 中文: [docs/USAGE.zh-CN.md](docs/USAGE.zh-CN.md)
-- English: [docs/USAGE.md](docs/USAGE.md)
-
-走完一个完整的端到端场景(从选题到发布)。
+| 文档 | 讲什么 |
+|---|---|
+| [README.md](README.md) / [README.zh-CN.md](README.zh-CN.md) | Landing 页、快速安装、5 个 skill 概览 |
+| [INSTALL.md](INSTALL.md) / [INSTALL.zh-CN.md](INSTALL.zh-CN.md) | 每个 CLI 依赖的详细安装,分 OS |
+| [INTEGRATIONS.md](INTEGRATIONS.md) / [INTEGRATIONS.zh-CN.md](INTEGRATIONS.zh-CN.md) | 在 Cursor / Aider / Codex CLI / Claude API SDK / 纯脚本里用这些 skill |
+| [docs/USAGE.md](docs/USAGE.md) / [docs/USAGE.zh-CN.md](docs/USAGE.zh-CN.md) | 端到端场景走一遍 |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | 贡献流程 + 设计原则 |
+| [CHANGELOG.md](CHANGELOG.md) | 版本记录 |
+| 各 skill `skills/<name>/SKILL.md` | skill 实际遵循的 playbook |
+| 各 skill `skills/<name>/README.md` | GitHub 浏览友好的 skill 摘要 |
 
 ## 贡献
 
-Issue / PR 都欢迎。最需要帮助的两件事:
+Issue / PR 都欢迎。流程和设计原则见 **[CONTRIBUTING.md](CONTRIBUTING.md)**。
 
-- **SKILL.md 正文英译** —— 描述是英文,触发没问题,但正文(流程、命令、 troubleshooting)还是中文
+目前最有价值的 PR 方向:
+
+- **SKILL.md 正文英译** —— 描述是英文,触发没问题,但正文(流程、命令、troubleshooting)还是中文
+- **其他 agent runtime 的集成 recipe**(LangChain / AutoGen 等)—— 加到 [INTEGRATIONS.zh-CN.md](INTEGRATIONS.zh-CN.md)
 - **更多 worked example** —— 尤其 `score-optimizer` 的校准循环,没做过的人很难自己摸出来
 
 如果你基于这些 skill 做了新东西,欢迎反链 —— 我会在 README 里 feature 你。

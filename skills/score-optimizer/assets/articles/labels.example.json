@@ -1,0 +1,106 @@
+{
+  "articles": [
+    {
+      "file": "01_viral_growth.md",
+      "human_scores": {
+        "title_score": 8,
+        "opening_score": 9,
+        "emotion_score": 9,
+        "info_score": 7,
+        "interaction_score": 8,
+        "structure_score": 8,
+        "trending_score": 6,
+        "ip_score": 7,
+        "ai_flavor_score": 6.0
+      },
+      "human_total": 68.0,
+      "viral_level": "high",
+      "notes": "典型逆袭故事，情绪共鸣强，有方法论干货，互动引导到位。AI味略显明显。"
+    },
+    {
+      "file": "02_mediocre_timemanagement.md",
+      "human_scores": {
+        "title_score": 3,
+        "opening_score": 2,
+        "emotion_score": 2,
+        "info_score": 4,
+        "interaction_score": 3,
+        "structure_score": 5,
+        "trending_score": 2,
+        "ip_score": 1,
+        "ai_flavor_score": 4.0
+      },
+      "human_total": 26.0,
+      "viral_level": "low",
+      "notes": "内容泛泛而谈，毫无情绪价值，标题平淡，缺乏个人特色。AI味很重。"
+    },
+    {
+      "file": "03_viral_layoff.md",
+      "human_scores": {
+        "title_score": 9,
+        "opening_score": 9,
+        "emotion_score": 10,
+        "info_score": 7,
+        "interaction_score": 7,
+        "structure_score": 9,
+        "trending_score": 8,
+        "ip_score": 6,
+        "ai_flavor_score": 9.5
+      },
+      "human_total": 74.5,
+      "viral_level": "high",
+      "notes": "35岁裁员话题击中焦虑痛点，故事感强，节奏好，情绪价值拉满。用户认为这篇最像真人写的。"
+    },
+    {
+      "file": "04_average_bookreview.md",
+      "human_scores": {
+        "title_score": 3,
+        "opening_score": 3,
+        "emotion_score": 2,
+        "info_score": 6,
+        "interaction_score": 2,
+        "structure_score": 5,
+        "trending_score": 3,
+        "ip_score": 2,
+        "ai_flavor_score": 5.0
+      },
+      "human_total": 31.0,
+      "viral_level": "low",
+      "notes": "标准读书笔记，信息有但缺乏包装，无情绪冲击力，无个人观点。典型的机械写作。"
+    },
+    {
+      "file": "05_viral_ai_work.md",
+      "human_scores": {
+        "title_score": 10,
+        "opening_score": 9,
+        "emotion_score": 8,
+        "info_score": 8,
+        "interaction_score": 9,
+        "structure_score": 8,
+        "trending_score": 10,
+        "ip_score": 7,
+        "ai_flavor_score": 6.5
+      },
+      "human_total": 75.5,
+      "viral_level": "high",
+      "notes": "AI热点+职场焦虑双重buff，标题极具冲击力，有具体数据和方法，互动引导强。风格较干练。"
+    },
+    {
+      "file": "06_viral_human_interview.md",
+      "human_scores": {
+        "title_score": 10,
+        "opening_score": 10,
+        "emotion_score": 10,
+        "info_score": 9,
+        "interaction_score": 10,
+        "structure_score": 9.5,
+        "trending_score": 9.5,
+        "ip_score": 10,
+        "ai_flavor_score": 6.0
+      },
+      "human_total": 84.0,
+      "viral_level": "high",
+      "notes": "极致的视觉改写，但用户反馈AI味重。虽然写得‘好’，但不够‘真人’。"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "claude-writing-skills",
+  "version": "0.1.0",
+  "description": "Claude Code skills for long-form content workflow: research collection via NotebookLM, multi-platform publishing via wechatsync, viral-score evaluation, single-article rewrite loops, and yt-dlp media helpers.",
+  "author": {
+    "name": "xiaomoBoy",
+    "url": "https://github.com/xiaomoBoy"
+  },
+  "repository": "https://github.com/xiaomoBoy/claude-writing-skills",
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "claude-skills",
+    "agent-skills",
+    "writing",
+    "content-creation",
+    "notebooklm",
+    "yt-dlp",
+    "publishing"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "claude-writing-skills",
+  "description": "A toolkit of Claude Code skills for long-form content creators: research collection, multi-platform publishing, viral scoring & rewrite loops, and yt-dlp helpers.",
+  "owner": {
+    "name": "xiaomoBoy",
+    "url": "https://github.com/xiaomoBoy"
+  },
+  "plugins": [
+    {
+      "name": "claude-writing-skills",
+      "source": "./",
+      "description": "5 skills for the content-creation workflow: research-collector, publisher-wechatsync, article-optimizer, score-optimizer, yt-dlp-direct.",
+      "version": "0.1.0"
+    }
+  ]
+}

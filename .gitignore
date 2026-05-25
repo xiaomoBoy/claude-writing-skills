@@ -1,0 +1,23 @@
+# macOS
+.DS_Store
+._*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Output / runtime artifacts
+scores.json
+*.log
+research/

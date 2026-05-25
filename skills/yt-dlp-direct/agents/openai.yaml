@@ -1,0 +1,7 @@
+interface:
+  display_name: "yt-dlp Direct"
+  short_description: "通过 yt-dlp 直接处理视频音频"
+  default_prompt: "Use $yt-dlp-direct to inspect, download, or extract media with the installed yt-dlp CLI."
+
+policy:
+  allow_implicit_invocation: true
